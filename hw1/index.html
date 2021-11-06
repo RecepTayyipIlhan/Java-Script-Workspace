@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Free Fall Formula </title>
+
+  <style>
+    body { max-width: 450px; }
+    pre  { overflow-h: auto; }
+    input { width: 50px }
+  </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+h (metre)= <input type=number id=ex value=125 onChange="calculate()">
+&emsp;
+g (gravitiy) = <input type=number id=lam value=10 onChange="calculate()">
+&emsp;
+<span id=res></span>
+<pre id=out><b>Table</b></pre>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+
+<hr />
+<p>Ref: <a href="https://www.toppr.com/guides/physics-formulas/free-fall-formula/" 
+   target="NewTab">Free Fall Table</a>
+</p>
+
+<script>
+"use strict";
+
+function free_fall(h, g, f=3) {
+    let t= (2*h)/g
+    t=Math.sqrt(t)
+    return t.toFixed(f)
+}
+
+function calculate() {
+    let h = Number(ex.value)
+    if (!Number.isInteger(h)) {
+       h = Math.round(h); ex.value = h
+    }
+    let g = Number(lam.value)
+    res.innerText = "P(h, g) = "+free_fall(h, g)+" sn"
+}
+function doTable() {
+    const L = [5, 10, 15, 20, 25, 30]
+    let a = L.map((g) => 'g='+g)
+    let str = header(a)
+    for (let h=100; h<=200; h=h+10) { 
+       let a = L.map((g) => free_fall(h, g))
+       str += oneLine(a, h)
+    }
+    return str
+}
+let header  = (a) => '      '+ a.join('   ')  //pre
+let oneLine = (a, h) => '\nh='+h+'  '+ a.join(' ')
+    
+    title.innerText = document.title
+    sample.innerText = free_fall+'\n'+doTable
+    calculate()
+    out.innerText = doTable()
+</script>
+
+</body>
+</html>
