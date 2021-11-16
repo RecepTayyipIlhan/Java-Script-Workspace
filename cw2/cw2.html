@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="app.js"></script>
+    <title>Data Analysis</title>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+
+<p>Minimum Correlation =
+<input type=number id=inp value="0.0"
+  style="width:50px" onChange="report(analyze(value))">
+</p>
+<p id=out></p>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+
+<hr />
+<p>Ref: <a href="http://eloquentjavascript.net/04_data.html#p_LI+01yIQON" 
+   target="ExternalDocument">Chap 4, Final analysis</a> &nbsp;
+   <a href="Objects">Objects</a>
+</p>
+
+<script>
+function report(a) {
+  out.innerText = JOURNAL.length+" journal entries and "
+                + a.length+" events\n" + a.join("\n")
+}
+    title.innerText = document.title; 
+    report([...EVENTS])  //Set to Array
+   
+
+
+    function range (start, end , step =start <=end ? 1 : -1){
+    let result=[];
+    for(let i = start; step>=0 ? i<= end : i>=end ;i+=step){
+    result.push(i);
+    }
+    return result;
+    }
+    
+    
+    function sum(numbers){
+    toplam=0;
+    for (let num of numbers){
+    toplam +=num;
+    }
+    return toplam;
+    
+    }
+    
+    
+
+
+  console.log(range(1,10))
+  console.log(range(5,2,-1))
+  console.log(sum(range(1,10)))
+
+  sample.innerText =analyze+"\n"+journalEvents+'\n\n'+range+'\n'+sum;
+
+ 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
