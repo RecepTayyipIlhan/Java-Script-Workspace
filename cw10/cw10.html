@@ -30,11 +30,11 @@
 
 <h2>Online Status</h2>
 
-<div id="isStatus">online status</div>
+<div id="isStatus">Online status</div>
 <hr />
 <h2>Keyboard</h2>
 
-<p id="keyboard">Bir Tuşa Basın</p>
+<p id="keyboard">Press any key</p>
 <hr />
 
 
@@ -45,7 +45,7 @@
 // JavaScript comment
 navigator.getBattery().then(function(battery) {
     if (battery.charging) {
-        isCharging.textContent="Computer is Charging"
+        isCharging.textContent="Computer is charging"
     } else {
         isCharging.textContent="Low Battery"
     }
@@ -55,7 +55,7 @@ navigator.getBattery().then(function(battery) {
    battery.onchargingchange = chargingChange();
 
    function chargingChange() {
-      document.querySelector('#level').textContent = "Charge %"+battery.level*100;
+      document.querySelector('#level').textContent = "Your charge is :  %"+battery.level*100;
       
    }
 });
@@ -65,7 +65,7 @@ if (navigator.onLine) {
   isStatus.textContent="disconnected-offline"
 }
 document.body.addEventListener('keyup', function(event) {
-  keyboard.textContent="Basılan Tuş:  "+event.key
+  keyboard.textContent="You press :  "+event.key
 });
 
 </script>
