@@ -17,10 +17,10 @@
     position: relative;
   }
   #image {
-    height: 272px;
-    width: 304px;
+    height: 500px;
+    width:  500px;
   background: 
-  url('https://i.pinimg.com/originals/31/ad/52/31ad5246cf608b1be1de302a6b40145e.gif') 0px 0px;
+  url('https://receptayyipilhan.github.io/Advanced-Programming/hw3/31ad5246cf608b1be1de302a6b40145e.gif') 0px 0px;
   }
 
 </style>
@@ -32,14 +32,11 @@
   <p id="image"> </p>
   <button onClick="openNewTab()">Show Original Image </button>
   <button onClick="image .animate(t2, 5000)">Rotate</button>
-  <p><a href="https://www.spriters-resource.com/submitter/Gussprint/" 
-    target="NewTab"> 
-    CREDITS</a>
- </p>
+  
 
   <hr />
   <div id=box onClick="box.animate(t2, 5000)">
-    <span id=in>Ömer Kaan Adaş</span>
+    <span id=in>Recep Tayyip Ilhan</span>
   </div>
   
   
@@ -58,7 +55,7 @@
 
 <script>
   function openNewTab(){
-    window.open("https://adaskaan.github.io/BLM19305E_HW/HomeWorks/HW3/img.png", '_blank');
+    window.open("https://receptayyipilhan.github.io/Advanced-Programming/hw3/31ad5246cf608b1be1de302a6b40145e.gif", '_blank');
   }
 
   let
@@ -71,20 +68,14 @@
 
   var tID; 
   function anim() {
-  var    position = 304; 
+  var    position = 0; 
   const  interval = 150; 
   tID = setInterval ( () => {
   document.getElementById("image").style.backgroundPosition = 
   `-${position}px 0px`; 
 
-  if (position < 3000)
-  { position = position + 304;}
-  
-  else
-  { position = 304; }
-  //reset the position 
   }
-  , interval ); //
+  , interval );
   } //end of anim
   sample.innerText =anim
   anim()
