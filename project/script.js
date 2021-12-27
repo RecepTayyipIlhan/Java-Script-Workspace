@@ -6,12 +6,11 @@ const deleteAllBtn = document.querySelector(".footer button");
 
 // onkeyup eventi
 inputBox.onkeyup = ()=>{
-  //let userEnteredValue = inputBox.value; 
-  addBtn.classList.add("active"); 
+   addBtn.classList.add("active"); 
  
 }
 
-showTasks(); //calling showTask function
+showTasks(); // showtask fonksiyonunu çağırma
 
 addBtn.onclick = ()=>{ 
   let userEnteredValue = inputBox.value; 
